@@ -1,5 +1,5 @@
 ![Cover Image](./coverImg/thodoris-tsiridis-savanna-wip-6.jpg)
-Art by [Thodoris Tsiridis](https://www.artstation.com/thodoris)<br>
+Art by [Thodoris Tsiridis](https://thodoris.artstation.com/)<br>
 ## Reference Sheet
 This is a reference sheet for all custom types, files and directories and how data is utilized/passed between them.
 ### ./index.ts
