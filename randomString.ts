@@ -7,4 +7,3 @@ export default function generateString(length: number): string {
   }
   return result;
 }
-

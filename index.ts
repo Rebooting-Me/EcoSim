@@ -8,7 +8,7 @@ interface Creature {
     type: string;
     speed: number;
     behavior: Behavior;
-    genome: { key: string[] }
+    genome: { keys: string[] }
 }
 
 interface Behavior {
