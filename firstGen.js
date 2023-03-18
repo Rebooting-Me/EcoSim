@@ -16,9 +16,9 @@ function createFirstGen(size) {
                 hunger: genHunger,
                 direction: index_js_1.directions[genDir]
             },
-            genome: { key: [key1, key2, key3, key4] }
+            genome: { keys: [key1, key2, key3, key4] }
         };
     }
-    return organism[0].genome.key;
+    return organism[0].genome.keys;
 }
 exports.createFirstGen = createFirstGen;
