@@ -1,6 +1,9 @@
+<<<<<<< HEAD
+=======
 # EcoSim (_An ecosystem evolution simulation project_)
 ![Cover Image](./coverImg/thodoris-tsiridis-savanna-wip-6.jpg)
 Art by [Thodoris Tsiridis](https://thodoris.artstation.com/)<br>
+>>>>>>> a9d01c03b5558013c66ba90b02a3bfe69c1bc6bd
 ## Reference Sheet
 This is a reference sheet for all custom types, files and directories and how data is utilized/passed between them.
 ### ./index.ts
@@ -21,4 +24,8 @@ This is a reference sheet for all custom types, files and directories and how da
 
 ### ./firstGen.ts
 - This script contains a functions which is used to generate the first generation of the ecosystem. (*as for now*)
+<<<<<<< HEAD
 - It initializes an **`organism[]`** of type `Creature` and generates random creatures with random respective traits.
+=======
+- It initializes an **`organism[]`** of type `Creature` and generates random creatures with random respective traits.
+>>>>>>> a9d01c03b5558013c66ba90b02a3bfe69c1bc6bd
