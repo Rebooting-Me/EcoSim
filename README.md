@@ -1,3 +1,4 @@
+# EcoSim (_An ecosystem evolution simulation project_)
 ![Cover Image](./coverImg/thodoris-tsiridis-savanna-wip-6.jpg)
 Art by [Thodoris Tsiridis](https://thodoris.artstation.com/)<br>
 ## Reference Sheet
