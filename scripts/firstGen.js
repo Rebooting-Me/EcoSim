@@ -1,26 +1,31 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createFirstGen = void 0;
 const index_js_1 = require("../index.js");
+const fs_1 = __importDefault(require("fs"));
 function createFirstGen(size) {
     let organism = [];
-    for (let i = 0; i < size; i++) {
-        let genType = (Math.floor((Math.random() + 1) * 10000)) % 5; // is used to generate random 'types[] indices'
-        let genDir = (Math.floor((Math.random() + 1) * 10000)) % 4; // is used to generate random 'directions[] indices'
-        let genHunger = (Math.floor((Math.random() + 1) * 10000)) % 11; // is used to generate random 'hunger level which is always <=10'
-        if (genHunger === 0) {
-            genHunger = 1;
+    if (fs_1.default.existsSync('./dynamic-fs/organisms.json')) { // check if file exists
+        const rawData = fs_1.default.readFileSync('./dynamic-fs/organisms.json');
+        organism = JSON.parse(rawData.toString());
+    }
+    else {
+        for (let i = 0; i < size; i++) {
+            let id = i;
+            let genType = (Math.floor((Math.random() + 1) * 10000)) % 5;
+            let genDir = (Math.floor((Math.random() + 1) * 10000)) % 4;
+            let genHunger = (Math.floor((Math.random() + 1) * 10000)) % 11;
+            if (genHunger === 0) {
+                genHunger = 1;
+            }
+            const keys = [(0, index_js_1.generateString)(6), (0, index_js_1.generateString)(6), (0, index_js_1.generateString)(6), (0, index_js_1.generateString)(6)];
+            let creature = new index_js_1.Creature(id, index_js_1.types[genType], Math.floor(Math.random() * 30), genHunger, index_js_1.directions[genDir], keys);
+            organism.push(creature);
         }
-        const [key1, key2, key3, key4] = [(0, index_js_1.generateString)(6), (0, index_js_1.generateString)(6), (0, index_js_1.generateString)(6), (0, index_js_1.generateString)(6)];
-        organism[i] = {
-            type: index_js_1.types[genType],
-            speed: Math.floor(Math.random() * 30),
-            behavior: {
-                hunger: genHunger,
-                direction: index_js_1.directions[genDir]
-            },
-            genome: { keys: [key1, key2, key3, key4] }
-        };
+        fs_1.default.writeFileSync('./dynamic-fs/organisms.json', JSON.stringify(organism)); // save the organisms array to a file
     }
     return organism;
 }
