@@ -1,4 +1,4 @@
-import { Creature, generateString, directions, types } from './index.js';
+import { Creature, generateString, directions, types } from '../index.js';
 
 function createFirstGen (size: number) {
     let organism: Creature[] = [];

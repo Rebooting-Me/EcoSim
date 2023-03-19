@@ -1,5 +1,5 @@
-import generateString from './randomString.js';
-import { createFirstGen } from './firstGen.js';
+import generateString from './scripts/randomString.js';
+import { createFirstGen } from './scripts/firstGen.js';
 
 const directions = ['MoveEast', 'MoveNorth', 'MoveWest', 'MoveSouth'];
 const types = ['Bacteria', 'Insects', 'Fish', 'Birds', 'Mammals']

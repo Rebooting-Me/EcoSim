@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createFirstGen = void 0;
-const index_js_1 = require("./index.js");
+const index_js_1 = require("../index.js");
 function createFirstGen(size) {
     let organism = [];
     for (let i = 0; i < size; i++) {
