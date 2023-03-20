@@ -34,11 +34,16 @@ if (isFirstRun) {
   isFirstRun = false;
 }
 
-fs.readFile('./dynamic-fs/organisms.json', 'utf-8', (err, data) => {
-  if (err) throw err;
-  const org = JSON.parse(data);
-  // Use the organisms data to continue the simulation
-  console.log(`first creature to be created in the first generation is -> `+org[0].id);
-});
+const i = (Math.floor(Math.random() * 10))
+
+async function readFile(filePath: string) {
+  await fs.readFile(filePath, 'utf-8', (err, data) => {
+    if (err) throw err;
+    const org = JSON.parse(data);
+    // Use the organisms data to continue the simulation
+    console.log(`first creature to be created in the first generation is -> `, org[i]);
+  });
+}
+readFile('./dynamic-fs/organisms.json')
 
 export { Creature, Behavior, generateString, directions, types }
