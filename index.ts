@@ -1,5 +1,5 @@
 import generateString from './scripts/randomString.js';
-import { createFirstGen } from './scripts/firstGen.js';
+import { createFirstGen } from './scripts/firstGen/firstGen.js';
 import * as fs from 'fs';
 
 const directions = ['MoveEast', 'MoveNorth', 'MoveWest', 'MoveSouth'];
@@ -41,7 +41,7 @@ async function readFile(filePath: string) {
     if (err) throw err;
     const org = JSON.parse(data);
     // Use the organisms data to continue the simulation
-    console.log(`first creature to be created in the first generation is -> `, org[i]);
+    console.log(`first creature to be created in the first generation is -> `, org[0]);
   });
 }
 readFile('./dynamic-fs/organisms.json')

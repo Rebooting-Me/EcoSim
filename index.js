@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.types = exports.directions = exports.generateString = exports.Creature = void 0;
 const randomString_js_1 = __importDefault(require("./scripts/randomString.js"));
 exports.generateString = randomString_js_1.default;
-const firstGen_js_1 = require("./scripts/firstGen.js");
+const firstGen_js_1 = require("./scripts/firstGen/firstGen.js");
 const fs = __importStar(require("fs"));
 const directions = ['MoveEast', 'MoveNorth', 'MoveWest', 'MoveSouth'];
 exports.directions = directions;
@@ -63,7 +63,7 @@ async function readFile(filePath) {
             throw err;
         const org = JSON.parse(data);
         // Use the organisms data to continue the simulation
-        console.log(`first creature to be created in the first generation is -> `, org[i]);
+        console.log(`first creature to be created in the first generation is -> `, org[0]);
     });
 }
 readFile('./dynamic-fs/organisms.json');
