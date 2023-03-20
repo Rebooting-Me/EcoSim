@@ -13,3 +13,9 @@
 3. Undecided
 4. In all probability **yes**. Interactions can happen initially based on their distances to each other and their hunger statuses.
 5. To get an insight into **Emergent Theory** and of course to broaden my programming horizons
+
+# Updates
+#####These below updates are all just brainstorming activities :exclamation: Don't necessarily makes it to deployment. (*Or maybe!*)
+- Installed `brain.js`
+- Created a boilerplate for survival in *NeuroFunction* folder in `test.js` for now.
+- Also, introduced `fs` module for dynamic file operations in `createFirstGen` function. What it effectively does is it creates a one time `organisms.json` file with all first Gen creatures as objects.
