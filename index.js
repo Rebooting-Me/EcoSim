@@ -50,7 +50,7 @@ class Creature {
     }
 }
 exports.Creature = Creature;
-let isFirstRun = true;
+let isFirstRun = false;
 let organisms;
 if (isFirstRun) {
     organisms = (0, firstGen_js_1.createFirstGen)(1000);
@@ -62,8 +62,21 @@ async function readFile(filePath) {
         if (err)
             throw err;
         const org = JSON.parse(data);
+        let word;
+        if (i === 1) {
+            word = 'st';
+        }
+        if (i === 2) {
+            word = 'nd';
+        }
+        if (i === 3) {
+            word = 'rd';
+        }
+        if (i > 3) {
+            word = 'th';
+        }
         // Use the organisms data to continue the simulation
-        console.log(`first creature to be created in the first generation is -> `, org[0]);
+        console.log(`${i}${word} creature to be created in the first generation is -> `, org[i]);
     });
 }
 readFile('./dynamic-fs/organisms.json');

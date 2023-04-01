@@ -26,7 +26,7 @@ interface Behavior {
     direction: string
 }
 
-let isFirstRun = true;
+let isFirstRun = false;
 let organisms: Creature[];
 
 if (isFirstRun) {
@@ -40,8 +40,13 @@ async function readFile(filePath: string) {
   await fs.readFile(filePath, 'utf-8', (err, data) => {
     if (err) throw err;
     const org = JSON.parse(data);
+    let word;
+    if (i === 1) {word = 'st'}
+    if (i === 2) {word = 'nd'}
+    if (i === 3) {word = 'rd'}
+    if (i > 3) {word = 'th'}
     // Use the organisms data to continue the simulation
-    console.log(`first creature to be created in the first generation is -> `, org[0]);
+    console.log(`${i}${word} creature to be created in the first generation is -> `, org[i]);
   });
 }
 readFile('./dynamic-fs/organisms.json')
